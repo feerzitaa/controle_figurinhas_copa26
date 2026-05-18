@@ -71,7 +71,8 @@
                     html += '<div class="country"><div class="country-name">' + pais + ' (' + countTem + '/' + figurinhas.length + ')</div><div class="progress-bar"><div class="progress-fill" style="width: ' + percentual + '%"></div></div><div class="figurinhas-grid">';
                     figurinhas.forEach(function(fig) {
                         const isChecked = localStorage.getItem(fig) === 'true';
-                        html += '<div class="figurinha"><input type="checkbox" id="' + fig + '" ' + (isChecked ? 'checked' : '') + ' onchange="atualizarStats()"><label for="' + fig + '" class="figurinha-label">' + fig.slice(-2) + '</label></div>';
+                        const numeral = fig.slice(-2);
+                        html += '<div class="figurinha"><input type="checkbox" id="' + fig + '" ' + (isChecked ? 'checked' : '') + ' onchange="atualizarStats()"><label for="' + fig + '" class="figurinha-label">' + numeral + '</label></div>';
                     });
                     html += '</div></div>';
                 }
